@@ -1,3 +1,4 @@
+> Diego Alves de Souza
 # Story: Sua própria carteira Crypto
 
 ## Motivação
