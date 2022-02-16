@@ -28,16 +28,13 @@ class CustomTerminal {
   }
 
   draftTable() {
-    // TODO: Parece que a linha a seguir precisa de um array gerado a partir dos valores da estrutura escolhida...🤔
     const data = this[kData];
     const table = chalkTable(TABLE_OPTIONS, data);
     this[kPrint] = console.draft(table);
   }
 
   hasDataToPrint() {
-    if (this[kData].length > 0) return true;
-
-    return false;
+    return this[kData].length > 0;
   }
   /**
    * Dado um array de objetos, adiciona cada registro aos dados a serem impressos.
