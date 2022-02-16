@@ -41,15 +41,7 @@ class CustomTerminal {
    * @param {Array<Crypto>} data
    */
   addDataToPrint(data) {
-    if (this.hasItemInData(data)) return;
-
     data.forEach((item) => this[kData].set(item.id, item));
-  }
-
-  hasItemInData(data) {
-    if (data.length === 1) return this[kData].has(data[0].id);
-
-    return false;
   }
 
   getDataById(id) {
