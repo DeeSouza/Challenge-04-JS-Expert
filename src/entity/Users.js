@@ -4,23 +4,22 @@ const kUsers = Symbol("kUsers");
 
 class Users {
   constructor() {
-    this[kUsers] = [];
+    this[kUsers] = new Set();
   }
 
   add(userRaw) {
     const user = new User(userRaw);
-
-    this[kUsers] = [...this[kUsers], user];
+    this[kUsers].add(user);
   }
 
   hasUsers() {
-    return this[kUsers].length > 0;
+    return this[kUsers].size > 0;
   }
 
   *[Symbol.iterator]() {
-    const idUsers = [...this[kUsers]].map((item) => `id=${item.id}`);
-
-    yield idUsers;
+    for (const user of this[kUsers]) {
+      yield user;
+    }
   }
 }
 

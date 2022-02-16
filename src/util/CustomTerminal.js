@@ -15,7 +15,7 @@ class CustomTerminal {
   constructor() {
     this[kPrint] = {};
     this[kTerminal] = null;
-    this[kData] = [];
+    this[kData] = new Map();
   }
 
   initialize() {
@@ -28,29 +28,32 @@ class CustomTerminal {
   }
 
   draftTable() {
-    const data = this[kData];
+    const data = [...this[kData].values()];
     const table = chalkTable(TABLE_OPTIONS, data);
     this[kPrint] = console.draft(table);
   }
 
   hasDataToPrint() {
-    return this[kData].length > 0;
+    return this[kData].size > 0;
   }
   /**
    * Dado um array de objetos, adiciona cada registro aos dados a serem impressos.
    * @param {Array<Crypto>} data
    */
   addDataToPrint(data) {
-    if (data) {
-      const moreData = [...this[kData], ...data];
-      this[kData] = moreData;
-    }
+    if (this.hasItemInData(data)) return;
+
+    data.forEach((item) => this[kData].set(item.id, item));
+  }
+
+  hasItemInData(data) {
+    if (data.length === 1) return this[kData].has(data[0].id);
+
+    return false;
   }
 
   getDataById(id) {
-    const crypto = this[kData].find((item) => item.id === id);
-
-    return crypto;
+    return this[kData].get(id);
   }
 
   removeDataById(id) {

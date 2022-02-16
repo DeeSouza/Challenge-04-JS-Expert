@@ -16,23 +16,9 @@ class CryptoService {
   async *list() {
     while (this.#hasData) {
       const { data } = await this.repository.list(this.#page, this.#limit);
-
       if (!data) this.#hasData = false;
 
-      const cryptosFormatted = data.map(
-        ({ id, symbol, name, cmc_rank, total_supply, quote }) => {
-          const dataFormatted = new Crypto({
-            id,
-            symbol,
-            name,
-            cmc_rank,
-            total_supply,
-            quote,
-          });
-
-          return dataFormatted;
-        }
-      );
+      const cryptosFormatted = data.map((item) => new Crypto(item));
 
       yield cryptosFormatted;
 
