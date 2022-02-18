@@ -49,13 +49,7 @@ class CustomTerminal {
   }
 
   removeDataById(id) {
-    const findItem = this[kData].has(id);
-
-    if (findItem) {
-      this[kData].delete(id);
-    }
-
-    return findItem;
+    return this[kData].delete(id);
   }
 
   plotQuoteChart(data) {
