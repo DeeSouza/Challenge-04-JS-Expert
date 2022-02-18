@@ -49,10 +49,13 @@ class CustomTerminal {
   }
 
   removeDataById(id) {
-    const filterCryptos = this[kData].filter((item) => item.id !== id);
-    this[kData] = filterCryptos;
+    const findItem = this[kData].has(id);
 
-    return filterCryptos;
+    if (findItem) {
+      this[kData].delete(id);
+    }
+
+    return findItem;
   }
 
   plotQuoteChart(data) {
