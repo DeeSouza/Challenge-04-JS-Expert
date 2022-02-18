@@ -3,7 +3,7 @@
 
 ## Motivação
 
-Como vocês sabem, o `módulo 05 - Advanced Javascript Data Types` apresenta estruturas tão sênior que os nossos casos de uso pra elas nas aulas são de dentro do próprio **código fonte do NodeJS**, e após conversar com alguns alunos sobre os últimos desafios, decidimos aplicar as estruturas vistas em aula em contextos onde elas podem brilhar!!
+Como vocês sabem, o `Módulo 05 - Advanced Javascript Data Types` apresenta estruturas tão sênior que os nossos casos de uso pra elas nas aulas são de dentro do próprio **código fonte do NodeJS**, e após conversar com alguns alunos sobre os últimos desafios, decidimos aplicar as estruturas vistas em aula em contextos onde elas podem brilhar!!
 
 ## Idéia geral
 
@@ -32,16 +32,15 @@ O Consumer será o nosso cliente Websocket que receberá as cryptos recomendadas
 
 - Iniciar o servidor WS principal
 - Listar as crypto moedas
-- iniciar o mainLoop da CLI
+- Iniciar o mainLoop da CLI
   - Listar mais informações
   - Selecionar uma das currencies exibidas
-    - quando selecionar, emitir evento para o _Processo 02_
+    - Quando selecionar, emitir evento para o _Processo 02_
 
 ### Processo 02 (Wallet | Consumer)
 
 - Mostrar graficamente a crypto moeda selecionada atual
-- Ouvir o evento de seleção de moeda para dicionar a moeda na Wallet
-dicionar a moeda na Wallet
+- Ouvir o evento de seleção de moeda para adicionar a moeda na Wallet
 - Selecionar uma das moedas na Wallet para ser a moeda representada no gr[áfico
 - Excluir uma das moedas na Wallet
 
@@ -50,7 +49,7 @@ dicionar a moeda na Wallet
 - Symbol
 - Map e Set
 
-### Requisitos do desafio
+### Requisitos do Desafio
 
 1. Suba o ambiente de desenvolvimento, executando os seguintes comandos em terminais diferentes: `npm run provider`, `npm run producer:dev`, `npm run consumer:dev`.
 
@@ -69,74 +68,14 @@ https://user-images.githubusercontent.com/41883467/153467415-9c8091d2-97dc-4fcc-
 > Nota: Não se preocupe em alterar o código na CLI ou na implementação de websockets, já tivemos e/ou teremos desafios para vocês se aprofundarem nessa parte
 > Nota da nota: Caso queira, alterações em quaisquer partes do fluxo são bem vindas, desde que sejam usadas as estruturas mencionadas na sessão de _"Estruturas esperadas"_.
 
-### Dicas
-- Lembre-se que esse módulo apresenta estruturas complexas, então tente entender as responsabilidades de cada uma para saber onde aplicar, e não se esqueça de procurar exemplos de implementação no próprio código do desafio ou em desafios anteriores, caso necessário. Fica por sua conta e criatividade montar o quebra cabeça e ir descobrindo por onde começar a implementar cada função.
-> Dica Wells do dia: Pode sair Mockando e implementando as funções para ver a CLI funcionando antes de ir implementando as estruturas de cara. Entender o fluxo da aplicação e o que deve ser retornado antes de de fato implementar as funções facilita muito a vida, confia :D
-
-- Para melhorar sua experiência de desenvolvimento, você pode usar a extensão [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) no VSCode, recebendo o auxilio visual para encontrar os `//TODO: comments`, assim:
-![image](https://user-images.githubusercontent.com/41883467/153465555-f2daa3e0-5770-4139-8344-dd2b792e159e.png)
-
 ### Extras
 
 - [ ] Desafio opcional: Caso queira, valide se é possível a implementação com WeakSet e WeakMap, implemente e/ou deixe um comentário sobre no código.
 - [ ] Desafio opcional: Caso queira, tente aplicar alguns testes no desafio e entender o funcionamento de cada trecho mais a fundo.
 
+### Checklist Features
 
-### Arquitetura e onde trabalhar
-
-```
-project
-│   README.md
-│   package.json
-│
-└───src
-│   │  index.js
-│   │  consumer-cli.js
-│   │  producer-cli.js
-│   │  producer-server.js
-│   │  provider-server.json
-│   │
-│   └───config
-│   │   │   language.js
-│   │   │   terminal.js
-│   │
-│   └───entity
-│   │   │   Crypto.js
-│   │   │   User.js
-│   │   │   Users.js
-│   │
-│   └───repository
-│   │   │   CryptoRepository.js
-│   │
-│   └───service
-│   │   │   IncomeService.js
-│   │
-│   └───util
-│   │   │   Api.js
-│   │   │   CustomTerminal.js
-│
-```
-
-### Checklist features
-
-- [ ] Deve implementar a estrutura esperada em `util/CustomTerminal.js`
-
-- [ ] Deve implementar os métodos existentes em `service/CryptoService.js`
-
-- [ ] Deve implementar a estrutura esperada no arquivo `entity/User.js`
-
-- [ ] Deve implementar as estruturas esperadas no arquivo `entity/Users.js`
-
-## Submissão
-
-1. Crie um fork deste repositório e modifique o README.md inserindo o seu nome no início do arquivo.
-
-2. Instale as dependências usando `npm i`.
-
-3. Implemente cada uma das funções marcadas com um `//@TODO: comment`
-
-4. Envie o link no canal `#desafios-jsexpert` da nossa comunidade no discord.
-
-## Até quando?
-
-Se você está pegando esse desafio na estréia, corre lá e envia pra gente até _Quarta-feira, 09 de março de 2022 (09/03/2022)_!
+- [x] Deve implementar a estrutura esperada em `util/CustomTerminal.js`
+- [x] Deve implementar os métodos existentes em `service/CryptoService.js`
+- [x] Deve implementar a estrutura esperada no arquivo `entity/User.js`
+- [x] Deve implementar as estruturas esperadas no arquivo `entity/Users.js`
