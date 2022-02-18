@@ -18,7 +18,20 @@ class CryptoService {
       const { data } = await this.repository.list(this.#page, this.#limit);
       if (!data) this.#hasData = false;
 
-      const cryptosFormatted = data.map((item) => new Crypto(item));
+      const cryptosFormatted = data.map(
+        ({ id, symbol, name, cmc_rank, total_supply, quote }) => {
+          const dataFormatted = new Crypto({
+            id,
+            symbol,
+            name,
+            cmc_rank,
+            total_supply,
+            quote,
+          });
+
+          return dataFormatted;
+        }
+      );
 
       yield cryptosFormatted;
 
