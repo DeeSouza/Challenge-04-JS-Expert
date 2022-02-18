@@ -37,6 +37,8 @@ class CryptoService {
 
       this.#page++;
     }
+
+    return [];
   }
 }
 

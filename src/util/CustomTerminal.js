@@ -41,6 +41,14 @@ class CustomTerminal {
    * @param {Array<Crypto>} data
    */
   addDataToPrint(data) {
+    if (data.length === 0) {
+      this.printInfo(
+        "=================== No more data to show! =====================\n"
+      );
+
+      return;
+    }
+
     data.forEach((item) => this[kData].set(item.id, item));
   }
 
